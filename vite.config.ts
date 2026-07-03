@@ -37,5 +37,15 @@ export default defineConfig({
 
 export default defineConfig({
   base: '/theotomo-01/',
-  plugins: [react()],
+  plugins: [
+    figmaAssetResolver(),
+    react(),
+    tailwindcss(),
+  ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
+  assetsInclude: ['**/*.svg', '**/*.csv'],
 })
